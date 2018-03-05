@@ -1,0 +1,49 @@
+<!doctype html>
+<html ng-app="fruitStore" lang="en">
+<!--The tag ng-app let you know that this is an app that uses AngularJs -->
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS v3.0 for AngularJs Course -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!--AngularJS-->
+    <script src="js/angular.min.js"></script>
+    <script src="js/sampleAngular.js"></script>
+    <title>Product!</title>
+</head>
+
+<body class="container" ng-controller="StoreController as store">
+    <h1>Fruit store</h1>
+    <div class="list-group">
+        <div class="list-group-item" ng-repeat="product in store.products | orderBy: '-price'" ng-show="!product.soldOut">
+            <h3>{{product.name}}
+            </h3>
+            <br>
+            <em>{{product.price | currency}}</em>
+
+            <div class="gallery" ng-init="viewImage = product.images[0]">
+                <h4>{{product.description}}</h4>
+                <img class="img img-circle img-thumbnail center-block" ng-src="{{viewImage}}" width="200" />
+                <ul class="clearfix">
+                    <li class="small-image pull-left thumbnail" ng-repeat="thumbnail in product.images">
+                        <a href ng-click="viewImage = 1">
+                            <img ng-src="{{thumbnail}}" width="50" />
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+
+            <br>
+            <button ng-hide="product.soldOut">Buy Me!</button>
+        </div>
+    </div>
+    <script>
+
+    </script>
+</body>
+
+</html>

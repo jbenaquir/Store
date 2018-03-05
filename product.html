@@ -1,0 +1,28 @@
+<!doctype html>
+<html ng-app="fruitStore" lang="en">
+<!--The tag ng-app let you know that this is an app that uses AngularJs -->
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!--AngularJS-->
+    <script src="js/angular.min.js"></script>
+    <script src="js/sampleAngular.js"></script>
+    <title>Product!</title>
+</head>
+
+<body ng-controller="StoreController as store">
+
+    <div ng-repeat="product in store.products">
+        <h3>{{product.name}}</h3>
+    </div>
+    <script>
+
+    </script>
+</body>
+
+</html>
